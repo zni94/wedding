@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "wedding",
+    "password": "wedding123!",
+    "database": "WEDDING",
+    "host": "localhost",
+    "port":"3306",
+    "dialect": "mysql"
+  },
+  "salt": "asd7f832j4kljsdfgv0945msdxcfv71asuiocvxb6n8rejtklxlf"
+}
