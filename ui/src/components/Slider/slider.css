@@ -1,0 +1,50 @@
+.slider-component {
+  max-width: 480px;
+  padding: 1.44rem;
+  overflow-y: hidden;
+}
+.slider-component > .slider-expander {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10fr 2fr;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.44rem;
+  background-color: beige;
+  padding: 1.44rem;
+  border: 1px solid #eee;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.slider-component > .slider-expander i {
+  padding: 0.36rem;
+}
+.slider-component > .slider-contents {
+  height: 0;
+  transition: height 0.33s;
+  overflow: hidden;
+  display: grid;
+  grid-template: "account copy" "name ."/10fr 2fr;
+  justify-content: space-between;
+  gap: 1.44rem;
+  border: 1px solid #eee;
+  border-top: none;
+}
+.slider-component > .slider-contents:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.slider-component > .slider-contents [name=account] {
+  grid-area: account;
+}
+.slider-component > .slider-contents [name=name] {
+  grid-area: name;
+}
+.slider-component > .slider-contents [name=copy] {
+  grid-area: copy;
+}
+.slider-component.toggle div {
+  height: 77px;
+}
+
+/*# sourceMappingURL=slider.css.map */

@@ -1,0 +1,165 @@
+.gallery-preview-component {
+  .image-preview-container {
+    width: 30%;
+    height: 582px;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+            "image_1 image_2"
+            "image_1 image_3"
+            "image_4 image_5"
+            "image_6 image_5"
+            "image_7 image_8"
+            "image_9 image_9";
+    gap: .72rem;
+    margin: 0 auto;
+    transition: height .66s;
+    position: relative;
+
+    .shader{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(180deg, transparent 80%, #fff 100%);
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4px;
+    }
+
+    &.open {
+      height: 100%;
+
+      .shader{
+        display: none;
+      }
+    }
+  }
+
+    button {
+      width: 240px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-ff);
+      gap: 1.8rem;
+      margin: 0 auto;
+      margin-top: 1.8rem;
+      border: 1px solid var(--color-c9);
+      border-radius: 30px;
+    }
+}
+
+.gallery-component {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+
+  &.toggle {
+    display: block;
+    top: 0;
+    left: 0;
+  }
+
+  .carousel {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: var(--color-18);
+    overflow-x: hidden;
+    white-space: nowrap;
+    position: relative;
+
+    .image-container {
+      height: 100%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-columns: repeat(9, 100%);
+      position: relative;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        display: none;
+        position: absolute;
+
+        &.view {
+          display: block;
+        }
+      }
+    }
+
+    .carousel-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 3.60rem;
+      padding: 3.60rem;
+      z-index: 99;
+
+      > button {
+        width: 32px;
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+}
+
+@media(max-width: 1440px) {
+  .gallery-preview-component {
+    .image-preview-container {
+      width: 60%;
+      height: 582px;
+    }
+  }
+
+  .gallery-component {
+    .carousel {
+      .image-container {
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(9, 100%);
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .carousel-toolbar {
+        padding: 1.20rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 720px) {
+  .gallery-preview-component {
+    .image-preview-container {
+      width: 90%;
+      height: 287px;
+    }
+  }
+
+  .gallery-component {
+    .carousel {
+      .carousel-toolbar {
+        padding: 0.90rem;
+      }
+    }
+  }
+}

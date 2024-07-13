@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* default */
+  font-family: "richmond-display", sans-serif;
+  font-style: normal;
+  letter-spacing: 0.18rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul, li {
+  list-style: none;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+[font][font=title] {
+  font-size: var(--font-size-title);
+}
+[font][font=subtitle] {
+  font-size: var(--font-size-subtitle);
+}
+[font][font=large] {
+  font-size: var(--font-size-large);
+}
+[font][font=plain] {
+  font-size: var(--font-size-plain);
+}
+[font][font=small] {
+  font-size: var(--font-size-small);
+}
+[font][font=sub] {
+  font-size: var(--font-size-sub);
+}
+
+[weight][weight=light] {
+  font-weight: var(--font-weight-light);
+}
+[weight][weight=regular] {
+  font-weight: var(--font-weight-regular);
+}
+[weight][weight=medium] {
+  font-weight: var(--font-weight-medium);
+}
+[weight][weight=semibold] {
+  font-weight: var(--font-weight-semibold);
+}
+[weight][weight=bold] {
+  font-weight: var(--font-weight-bold);
+}
+
+[text-align][text-align=left] {
+  text-align: left;
+}
+[text-align][text-align=center] {
+  text-align: center;
+}
+[text-align][text-align=right] {
+  text-align: right;
+}
+
+[color] {
+  /* strong color(bold, semibold) */
+  /* default color(large, plain) */
+  /* sub color(small, sub) */
+  /* highlight */
+}
+[color][color="18"] {
+  color: var(--color-18);
+}
+[color][color="54"] {
+  color: var(--color-54);
+}
+[color][color="90"] {
+  color: var(--color-90);
+}
+[color][color=c9] {
+  color: var(--color-c9);
+}
+[color][color=ff] {
+  color: var(--color-ff);
+}
+[color][color=red] {
+  color: var(--color-red);
+}
+
+[text][text=none] {
+  text-transform: none;
+}
+[text][text=upper] {
+  text-transform: uppercase;
+}
+[text][text=capital] {
+  text-transform: capitalize;
+}
+[text][text=lower] {
+  text-transform: lowercase;
+}
+
+main {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.contents-form {
+  display: grid;
+  gap: 7.2rem;
+}
+.contents-form .contents {
+  display: grid;
+  gap: 7.2rem;
+  padding: 3.6rem 0;
+}
+.contents-form .contents:nth-child(3) {
+  background-color: var(--color-f9);
+}
+.contents-form .contents > div {
+  display: grid;
+  align-content: center;
+  gap: 3.6rem;
+}
+
+.modal {
+  display: none;
+}
+.modal.toggle {
+  display: block;
+}
+
+@media (orientation: portrait) {
+  /* Portrait Mode */
+}
+@media (orientation: landscape) {
+  /* Landscape Mode */
+}
+
+/*# sourceMappingURL=style.css.map */

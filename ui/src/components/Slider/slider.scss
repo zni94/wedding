@@ -1,0 +1,63 @@
+.slider-component {
+  max-width: 480px;
+  padding: 1.44rem;
+  overflow-y: hidden;
+
+  > .slider-expander {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.44rem;
+    background-color: beige;
+    padding: 1.44rem;
+
+    border: 1px solid #eee;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    i {
+      padding: .36rem;
+    }
+  }
+
+  > .slider-contents {
+    height: 0;
+    transition: height .33s;
+    overflow: hidden;
+
+    display: grid;
+    grid-template: "account copy"
+                    "name ." / 10fr 2fr;
+    justify-content: space-between;
+    gap: 1.44rem;
+
+    border: 1px solid #eee;
+    border-top: none;
+
+    &:last-child {
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    [name='account'] {
+      grid-area: account;
+    }
+
+    [name='name'] {
+      grid-area: name;
+    }
+
+    [name='copy'] {
+      grid-area: copy;
+    }
+  }
+
+  &.toggle {
+    div {
+      height: 77px;
+    }
+  }
+
+}

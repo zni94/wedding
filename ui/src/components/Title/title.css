@@ -1,0 +1,15 @@
+.title-component {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: var(--font-size-sub);
+  color: var(--color-90);
+  font-weight: var(--font-weight-light);
+  text-transform: uppercase;
+}
+.title-component img {
+  width: 2.16rem;
+  aspect-ratio: 1/1;
+}
+
+/*# sourceMappingURL=title.css.map */

@@ -1,0 +1,83 @@
+.contact-component {
+  display: grid;
+  justify-items: center;
+  gap: 1.80rem;
+
+
+  .contact-image-container {
+    width: 30%;
+    margin: 0 auto;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 10;
+      object-position: center;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+
+  .contact-info {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto auto;
+    gap: .72rem;
+
+    [name='parents'] {
+      display: grid;
+      align-items: center;
+
+      gap: .72rem;
+    }
+  }
+
+  button {
+    width: 240px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-ff);
+    gap: 1.8rem;
+    margin: 0 auto;
+    margin-top: 1.8rem;
+    border: 1px solid var(--color-c9);
+    border-radius: 30px;
+  }
+}
+
+.contact-modal{
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  label{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.20);
+  }
+
+  &.toggle{
+    display: block;
+  }
+}
+
+@media (max-width: 1440px) {
+  .contact-component {
+    .contact-image-container {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-component {
+    .contact-image-container {
+      width: 90%;
+    }
+  }
+}
