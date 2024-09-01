@@ -1,1 +1,1 @@
-export const env={"PUBLIC_API_HOST":"http://192.168.45.70:5000"}
+export const env={"PUBLIC_API_HOST":"http://222.236.163.217:12538"}
