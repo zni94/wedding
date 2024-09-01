@@ -1,0 +1,1 @@
+export const env={"PUBLIC_API_HOST":"http://192.168.45.70:5000"}
