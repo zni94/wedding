@@ -5,22 +5,57 @@
   line-height: 0;
 
   .outro-container{
-    width: 30%;
+    width: 100%;
+    max-height: 280px;
+    overflow: hidden;
     position: relative;
 
     .shadow{
       position: absolute;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 36px;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,.5);
+      background-color: rgba(0, 0, 0, 0.5);
       box-sizing: border-box;
       z-index: 99;
+
+      .share-btn{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        gap: 16px;
+        color: var(--color-ff);
+        z-index: 100;
+      }
     }
 
     img{
       position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media(max-width: 1440px){
+  .outro-component{
+    .outro-container{
+      width: 60%;
+    }
+  }
+}
+
+@media(max-width: 720px){
+  .outro-component{
+    .outro-container{
       width: 100%;
     }
   }

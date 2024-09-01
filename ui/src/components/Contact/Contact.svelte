@@ -8,11 +8,8 @@
     
     onMount(() => {
         let searchParams = new URLSearchParams(location.href);
-        console.log('location.href', location.href)
-        console.log('searchParams', searchParams)
         
         type = searchParams.has('type') && Number(searchParams.get('type'))
-        console.log('type', type)
         
         switch (type) {
             case 1:
