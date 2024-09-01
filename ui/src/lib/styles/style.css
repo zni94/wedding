@@ -115,20 +115,22 @@ main {
 
 .contents-form {
   display: grid;
-  gap: 7.2rem;
 }
 .contents-form .contents {
   display: grid;
-  gap: 7.2rem;
-  padding: 3.6rem 0;
+  gap: 72px;
 }
 .contents-form .contents:nth-child(3) {
+  background-color: var(--color-f9);
+}
+.contents-form .contents:nth-child(8) {
   background-color: var(--color-f9);
 }
 .contents-form .contents > div {
   display: grid;
   align-content: center;
-  gap: 3.6rem;
+  gap: 36px;
+  padding: 72px 0;
 }
 
 .modal {

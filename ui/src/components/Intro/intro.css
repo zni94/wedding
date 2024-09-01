@@ -1,0 +1,36 @@
+.intro-component {
+  display: grid;
+  place-items: center;
+}
+.intro-component .intro-container {
+  width: 30%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  gap: 36px;
+}
+.intro-component .intro-container .intro-content {
+  width: 100%;
+  display: grid;
+  gap: 36px;
+}
+.intro-component .intro-container img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+@media (max-width: 1440px) {
+  .intro-component .intro-container {
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .intro-component .intro-container {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=intro.css.map */

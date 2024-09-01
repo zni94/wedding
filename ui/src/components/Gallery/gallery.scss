@@ -5,20 +5,19 @@
     overflow-y: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(5, auto);
     grid-template-areas:
-            "image_1 image_2"
-            "image_1 image_3"
-            "image_4 image_5"
-            "image_6 image_5"
-            "image_7 image_8"
-            "image_9 image_9";
+      "image_1 image_2"
+      "image_1 image_3"
+      "image_4 image_4"
+      "image_5 image_7"
+      "image_6 image_7";
     gap: .72rem;
     margin: 0 auto;
-    transition: height .66s;
+    transition: height .33s;
     position: relative;
 
-    .shader{
+    .shader {
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -33,29 +32,37 @@
       object-fit: cover;
       object-position: center;
       border-radius: 4px;
+
+      &.small {
+        aspect-ratio: 16/10;
+      }
+
+      &.large {
+        aspect-ratio: 16/20;
+      }
     }
 
     &.open {
       height: 100%;
 
-      .shader{
+      .shader {
         display: none;
       }
     }
   }
 
-    button {
-      width: 240px;
-      height: 60px;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--color-ff);
-      gap: 1.8rem;
-      margin: 0 auto;
-      margin-top: 1.8rem;
-      border: 1px solid var(--color-c9);
-      border-radius: 30px;
-    }
+  button {
+    width: 240px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-ff);
+    gap: 1.8rem;
+    margin: 0 auto;
+    margin-top: 1.8rem;
+    border: 1px solid var(--color-c9);
+    border-radius: 30px;
+  }
 }
 
 .gallery-component {

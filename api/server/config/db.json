@@ -2,8 +2,8 @@
   "development": {
     "username": "wedding",
     "password": "wedding123!",
-    "database": "WEDDING",
-    "host": "localhost",
+    "database": "wedding",
+    "host": "192.168.45.70",
     "port":"3306",
     "dialect": "mysql"
   },

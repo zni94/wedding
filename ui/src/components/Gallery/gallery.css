@@ -4,11 +4,11 @@
   overflow-y: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, auto);
-  grid-template-areas: "image_1 image_2" "image_1 image_3" "image_4 image_5" "image_6 image_5" "image_7 image_8" "image_9 image_9";
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas: "image_1 image_2" "image_1 image_3" "image_4 image_4" "image_5 image_7" "image_6 image_7";
   gap: 0.72rem;
   margin: 0 auto;
-  transition: height 0.66s;
+  transition: height 0.33s;
   position: relative;
 }
 .gallery-preview-component .image-preview-container .shader {
@@ -25,6 +25,12 @@
   object-fit: cover;
   object-position: center;
   border-radius: 4px;
+}
+.gallery-preview-component .image-preview-container img.small {
+  aspect-ratio: 16/10;
+}
+.gallery-preview-component .image-preview-container img.large {
+  aspect-ratio: 16/20;
 }
 .gallery-preview-component .image-preview-container.open {
   height: 100%;

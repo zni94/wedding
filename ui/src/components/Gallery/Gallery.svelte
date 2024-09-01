@@ -1,16 +1,21 @@
 <script>
-    import image_1 from '$lib/images/wedding/image_1.jpg'
-    import image_2 from '$lib/images/wedding/image_2.jpg'
-    import image_3 from '$lib/images/wedding/image_3.jpg'
-    import image_4 from '$lib/images/wedding/image_4.jpg'
-    import image_5 from '$lib/images/wedding/image_5.jpg'
     
     import './gallery.css'
     import LeftArrow from "$lib/images/svg/LeftArrow.svelte";
     import RightArrow from "$lib/images/svg/RightArrow.svelte";
     import Close from "$lib/images/svg/Close.svelte";
-    import Plus from "$lib/images/svg/Plus.svelte";
-    import {onMount} from "svelte";
+    
+    import {PUBLIC_API_HOST} from "$env/static/public";
+    
+    const imageList = [
+        {imgName: 'BSH08104.jpg', imgSize: 'large'},
+        {imgName: 'BSH08218.jpg', imgSize: 'small'},
+        {imgName: 'BSH08370.jpg', imgSize: 'small'},
+        {imgName: 'BSH09655.jpg', imgSize: 'large'},
+        {imgName: 'BSH09498.jpg', imgSize: 'small'},
+        {imgName: 'BSH09651.jpg', imgSize: 'small'},
+        {imgName: 'BSH09687.jpg', imgSize: 'large'},
+    ]
     
     $: imageContainer = null;
     
@@ -27,7 +32,7 @@
             isOpen = !isOpen
         },
         toggle: () => {
-            if(!isOpen) return
+            if (!isOpen) return
             
             isToggle = !isToggle
             
@@ -45,23 +50,23 @@
             }
         },
         prev: () => {
-            if (idx === 1) return idx = 9
+            if (idx === 1) return idx = 7
             
             idx--
         },
         next: () => {
-            if (idx === 9) return idx = 1
+            if (idx === 7) return idx = 1
             
             idx++
         },
         touchstart: (evt) => {
             startClientX = evt.changedTouches[0].clientX
         },
-        touchmove: () =>{
+        touchmove: () => {
             isMove = true;
         },
         touchend: (evt) => {
-            if(!isMove) return;
+            if (!isMove) return;
             
             endClientX = evt.changedTouches[0].clientX
             startClientX - endClientX > 0 ? galleryHandler.next() : galleryHandler.prev()
@@ -73,15 +78,10 @@
 <div class="gallery-preview-component">
     <div class="image-preview-container" class:open={isOpen} on:click={galleryHandler.toggle}>
         <div class="shader"></div>
-        <img alt="1" src={image_1} style="grid-area: image_1; aspect-ratio: 16 / 20">
-        <img alt="2" src={image_2} style="grid-area: image_2; aspect-ratio: 16 / 10; object-position: center;">
-        <img alt="3" src={image_3} style="grid-area: image_3; aspect-ratio: 16 / 10">
-        <img alt="4" src={image_4} style="grid-area: image_4; aspect-ratio: 16 / 10">
-        <img alt="5" src={image_5} style="grid-area: image_5; aspect-ratio: 16 / 20">
-        <img alt="6" src={image_1} style="grid-area: image_6; aspect-ratio: 16 / 10">
-        <img alt="7" src={image_2} style="grid-area: image_7; aspect-ratio: 16 / 20">
-        <img alt="8" src={image_3} style="grid-area: image_8; aspect-ratio: 16 / 20">
-        <img alt="9" src={image_4} style="grid-area: image_9; aspect-ratio: 16 / 10">
+        {#each imageList as image, i}
+            <img class={image.imgSize} alt={i+1} src={`${PUBLIC_API_HOST}/images/${image.imgName}`}
+                 style={`grid-area:image_${i+1};`}>
+        {/each}
     </div>
     
     <button
@@ -102,15 +102,9 @@
             </button>
         </div>
         <div class="image-container" bind:this={imageContainer}>
-            <img alt="1" class:view={idx === 1} src={image_1}>
-            <img alt="2" class:view={idx === 2} src={image_2}>
-            <img alt="3" class:view={idx === 3} src={image_3}>
-            <img alt="4" class:view={idx === 4} src={image_4}>
-            <img alt="5" class:view={idx === 5} src={image_5}>
-            <img alt="6" class:view={idx === 6} src={image_1}>
-            <img alt="7" class:view={idx === 7} src={image_2}>
-            <img alt="8" class:view={idx === 8} src={image_3}>
-            <img alt="9" class:view={idx === 9} src={image_4}>
+            {#each imageList as image, i}
+                <img class:view={idx === i+1} alt={i+1} src={`${PUBLIC_API_HOST}/images/${image.imgName}`}>
+            {/each}
         </div>
         <div class="carousel-toolbar" style="justify-content: center">
             <button on:click={galleryHandler.prev}>

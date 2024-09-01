@@ -1,0 +1,29 @@
+.information-component{
+  display: grid;
+  place-items: center;
+
+  .information-container{
+    width: 30%;
+    display: grid;
+    gap: 60px;
+    position: relative;
+  }
+}
+
+@media(max-width: 1440px){
+  .information-component{
+
+    .information-container{
+      width: 60%;
+    }
+  }
+}
+
+@media(max-width: 720px){
+  .information-component{
+
+    .information-container{
+      width: 90%;
+    }
+  }
+}

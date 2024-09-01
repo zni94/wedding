@@ -1,25 +1,18 @@
 <script>
     import './contact.css'
     import {onMount} from "svelte";
-    import src from '$lib/images/wedding/image_1.jpg'
-    
-    $: isToggle = false
+    import {PUBLIC_API_HOST} from "$env/static/public";
     
     $: name = ''
-    $: type=''
-    $: mode = ''
-    
-    const modalHandler = () => {
-        isToggle = !isToggle;
-        
-        body.style.overflow = isToggle ? 'hidden' : 'auto'
-    }
+    $: type = ''
     
     onMount(() => {
         let searchParams = new URLSearchParams(location.href);
+        console.log('location.href', location.href)
+        console.log('searchParams', searchParams)
         
         type = searchParams.has('type') && Number(searchParams.get('type'))
-        mode = searchParams.has('mode') && Number(searchParams.get('mode'))
+        console.log('type', type)
         
         switch (type) {
             case 1:
@@ -27,6 +20,9 @@
                 break;
             case 2:
                 name = '송재준';
+                break;
+            case 3:
+                name = '무량스님';
                 break;
             default:
                 name = '송준영';
@@ -37,7 +33,7 @@
 
 <div class="contact-component">
     <div class="contact-image-container">
-        <img {src} alt="no image"/>
+        <img src={`${PUBLIC_API_HOST}/images/BSH08781.jpg`} alt="no image"/>
     </div>
     
     <div class="contact-info">
@@ -46,7 +42,7 @@
             <span>·</span>
             <span>김경아</span>
         </div>
-        <div name="familyTitle" font="sub" color="54" weight="regular">
+        <div name="familyTitle" font="small" color="54" weight="regular">
             <span>의</span>
             <span>차남</span>
         </div>
@@ -56,12 +52,10 @@
     </div>
     
     <div class="contact-info">
-        <div name="parents" font="plain" color="18" weight="semibold" style="grid-template-columns: 1fr auto 1fr">
+        <div name="parents" font="plain" color="18" weight="semibold" style="grid-template-columns: 1fr">
             <span>{name}</span>
-            <span>&nbsp;</span>
-            <span>{mode === 1 ? '(무량)' : ''}</span>
         </div>
-        <div name="familyTitle" font="sub" color="54" weight="regular">
+        <div name="familyTitle" font="small" color="54" weight="regular">
             <span>의</span>
             <span>장녀</span>
         </div>
@@ -69,19 +63,4 @@
             <span>민교</span>
         </div>
     </div>
-    
-    <button on:click={modalHandler}
-        color="18"
-        font="small"
-        weight="semibold">
-        Contact
-    </button>
 </div>
-
-<dib class="contact-modal" class:toggle={isToggle}>
-    <label for="ModalCloseBtn">
-    
-    <input type="button" id="ModalCloseBtn" on:click={modalHandler}>
-    contact modal
-    </label>
-</dib>
