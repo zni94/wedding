@@ -6,9 +6,10 @@
     import ClipboardJS from "clipboard";
     
     const src= `${PUBLIC_API_HOST}/images/BSH09063.jpg`
-    const url = location.href;
+    $: url = null;
     
     onMount(()=>{
+        url = location.href;
         const clipboard = new ClipboardJS('.copy-btn')
         
         clipboard.on('success', (e)=>{
